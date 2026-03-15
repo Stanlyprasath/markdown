@@ -1,0 +1,88 @@
+:root {
+    --bg-main: #ffffff;
+    --bg-side: #f5f7f9;
+    --border: #d1d5db;
+    --text: #1f2937;
+    --accent: #2563eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 60px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; }
+.logo span { color: var(--accent); }
+
+.btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.editor-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+
+.label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    background: var(--bg-side);
+    border-bottom: 1px solid var(--border);
+    color: #6b7280;
+}
+
+#markdown-input {
+    flex: 1;
+    border: none;
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+    background: var(--bg-side);
+    line-height: 1.6;
+}
+
+.preview {
+    flex: 1;
+    padding: 20px 40px;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+/* Markdown Specific Styling */
+.preview h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.preview blockquote { border-left: 4px solid var(--accent); padding-left: 15px; color: #4b5563; }
+.preview code { background: #eee; padding: 2px 5px; border-radius: 4px; }
